@@ -1,0 +1,95 @@
+.services-section {
+  padding: 5rem 8%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.services-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+/* ===== Grid ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+/* ===== Card ===== */
+.service-card {
+  background: var(--component-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px var(--box-shadow-hover);
+}
+
+.service-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 1.5rem;
+}
+
+.service-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+.service-content p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* ===== Botón ===== */
+.service-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.service-button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .services-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-content p {
+    font-size: 0.9rem;
+  }
+}

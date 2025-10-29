@@ -1,0 +1,234 @@
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: var(--component-bg);
+  box-shadow: 0 2px 10px var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+} 
+
+/* ===== Logo y título ===== */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navbar-logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.navbar-title h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.navbar-title span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ===== Menú ===== */
+.navbar-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  transition: none;
+}
+
+.navbar-menu li a {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: var(--primary-color);
+}
+
+.navbar-menu li a:hover::after {
+  width: 100%;
+}
+
+/* ===== Botón principal ===== */
+.navbar-cta .btn-appointment {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-cta .btn-appointment:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+/* ===== Botón hamburguesa ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.mobile-cta {
+  display: none;
+}
+.navbar-menu li a,
+.navbar-cta .btn-appointment,
+.menu-toggle {
+  cursor: pointer;
+}
+/* ===== Responsive ===== */
+@media (max-width: 1050px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--component-bg);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    z-index: 900;
+
+    /* 🔹 Oculto por defecto */
+    opacity: 0;
+    transform: translateY(-15px);
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease,
+      max-height 0.5s ease;
+  }
+
+  /* 🔹 Estado visible con animación */
+  .navbar-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px; /* suficiente para que todo quepa */
+    pointer-events: auto;
+  }
+
+  /* 🔹 CTA visible solo en móvil */
+  .mobile-cta {
+    display: block;
+    margin-top: 0.8rem;
+  }
+
+  .btn-appointment {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+}
+
+/* @media (max-width: 1050px) {
+    .mobile-cta {
+    display: block;
+  }
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--component-bg);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 900;
+  }
+
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-cta {
+    margin-top: 0.8rem;
+  }
+
+  .btn-appointment {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+
+} */
