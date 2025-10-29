@@ -114,9 +114,9 @@ npm run dev
 **Orlando Ledón**  
 Front-End Developer (React / React Native)  
 
-📧 your-email@example.com  
-💼 [LinkedIn Profile](https://www.linkedin.com)  
-🌐 Portfolio: [your-portfolio-link.com](https://your-portfolio-link.com)
+📧 leso.orlando@gmail.com  
+💼 [https://www.linkedin.com/in/orlandoledon/](https://www.linkedin.com/in/orlandoledon/)  
+
 
 
 
