@@ -1,29 +1,34 @@
 .blog-section {
-  padding: 4rem 2rem;
+  padding: 5rem 8%; /* ✅ igual que services-section */
   background-color: var(--background-color);
   color: var(--text-color);
-
 }
 
 .blog-title {
   font-size: 2rem;
-  color: var(--text-subt-skill-color);
+  font-weight: 600;
+  color: var(--text-color);
   margin-bottom: 0.5rem;
+  text-align: left; /* ✅ coherente con las otras secciones */
 }
 
 .blog-subtitle {
   font-size: 1rem;
   color: var(--text-light);
   margin-bottom: 3rem;
+  text-align: left; /* ✅ para alinearlo con el título */
+  max-width: 600px; /* ✅ evita líneas demasiado largas */
 }
 
+/* ===== Grid ===== */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem; /* igual que en services */
   justify-items: center;
 }
 
+/* ===== Card ===== */
 .blog-card {
   background: var(--component-bg);
   border-radius: 12px;
@@ -35,16 +40,18 @@
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px var(--box-shadow);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px var(--box-shadow-hover);
 }
 
+/* ===== Imagen ===== */
 .blog-image img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
+/* ===== Contenido ===== */
 .blog-content {
   padding: 1.5rem;
 }
@@ -57,7 +64,8 @@
 }
 
 .blog-content h3 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--text-subt-skill-color);
   margin-bottom: 0.8rem;
 }
@@ -69,23 +77,29 @@
   color: var(--text-color);
 }
 
+/* ===== Botón ===== */
 .blog-button {
   background-color: var(--primary-color);
   color: #fff;
-  padding: 0.6rem 1.3rem;
+  padding: 0.6rem 1.4rem;
   border-radius: 6px;
   border: none;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .blog-button:hover {
   background-color: var(--button-hover);
+  transform: translateY(-2px);
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .blog-section {
+    padding: 3rem 1.5rem; /* igual que services */
+  }
+
   .blog-title {
     font-size: 1.6rem;
   }
