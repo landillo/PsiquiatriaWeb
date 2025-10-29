@@ -70,8 +70,8 @@ Responsive navigation bar that includes:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/landillo/psiquiatria-web.git
-cd psiquiatria-web
+git clone https://github.com/landillo/psiquiatriaWeb.git
+cd psiquiatriaWeb
   
 ```
 
