@@ -1,73 +1,182 @@
-# React + TypeScript + Vite
+# 🧠 Psychiatry & Mental Health Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully responsive web application built with **React + TypeScript + Vite**.  
+This project represents a professional psychiatrist’s website, featuring sections like *Home*, *About*, *Services*, *Blog*, and *Contact*, with smooth scrolling navigation and a clean, modular structure.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Technologies Used
 
-## React Compiler
+- **React 18** + **TypeScript**
+- **Vite** as development environment
+- **React Scroll** for smooth navigation
+- **Lucide React** for icons
+- **CSS Modules and Global Styles**
+- **Responsive Design** (mobile-first)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+src/
+├── assets/ # Images and media files
+│ ├── homePsiquiatra1.jpeg
+│ ├── service1.jpeg
+│ └── logoPsiquiatria.png
+│
+├── components/ # Reusable components
+│ ├── NavBar/
+│ │ ├── NavBar.tsx
+│ │ └── Styles.css
+│ ├── HeroSection/
+│ │ ├── HeroSection.tsx
+│ │ └── Styles.css
+│ ├── Footer/
+│ │ ├── Footer.tsx
+│ │ └── Styles.css
+│ └── Modal/
+│ ├── Modal.tsx
+│ └── Styles.css
+│
+├── pages/ # Main page sections
+│ ├── HomePage/
+│ │ ├── HomePage.tsx
+│ │ └── Styles.css
+│ ├── AboutPage/
+│ │ ├── AboutPage.tsx
+│ │ └── Styles.css
+│ ├── ServicesPage/
+│ │ ├── ServicesPage.tsx
+│ │ └── Styles.css
+│ ├── BlogPage/
+│ │ ├── BlogPage.tsx
+│ │ └── Styles.css
+│ └── ContactPage/
+│ ├── ContactPage.tsx
+│ └── Styles.css
+│
+├── helpers/ # Utility data and functions
+│ └── data/
+│ └── dataServices.ts
+│
+├── styles/
+│ └── global.css # Global color variables and base styles
+│
+├── App.tsx # Main app component with React Scroll navigation
+├── main.tsx # Application entry point
+└── vite.config.ts
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧩 Component Overview
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### **1. NavBar**
+Responsive navigation bar that includes:
+- Horizontal logo and title alignment  
+- Hamburger menu on smaller screens  
+- Smooth scrolling between sections (using `react-scroll`)  
+- Sticky position on scroll  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### **2. HeroSection**
+- Animated image carousel with text overlay  
+- Title, subtitle, and call-to-action button  
+- Smooth auto-slide transitions  
+- Fully responsive and mobile-friendly  
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+### **3. AboutPage**
+- Two-column layout:
+  - Left: Doctor’s portrait image  
+  - Right: Description and key service icons  
+- Professional and modern layout  
+
+---
+
+### **4. ServicesPage**
+- Grid of service cards displaying:
+  - Image, title, short description, and button  
+- Clicking a card opens a **modal** with more detailed information  
+- Data loaded dynamically from `dataServices.ts`  
+
+---
+
+### **5. BlogPage**
+- Displays sample articles written by the psychiatrist  
+- Each card includes image, date, title, and summary  
+- Smooth hover animations matching the overall site design  
+
+---
+
+### **6. ContactPage**
+- Contact information (phone, email, address)  
+- Embedded Google Maps location  
+- Icon-based design using **Lucide React**  
+
+---
+
+### **7. Footer**
+- Compact and balanced footer with:
+  - Left: Logo and name  
+  - Center: Contact details  
+  - Right: Social links (Facebook, Instagram)  
+- Includes a personalized copyright  
+
+---
+
+## 🌟 Key Features
+
+- Smooth scroll navigation between sections  
+- Animated hero carousel  
+- Responsive service and blog card grids  
+- Reusable modal component  
+- Global color variables for consistent styling  
+- Mobile-first layout  
+
+---
+
+## ⚙️ Installation and Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/psiquiatria-webapp.git
+cd psiquiatria-webapp
+### 2. Install dependencies
+npm install
+
+### 3. Run the development server
+npm run dev
+
+4. Build for production
+npm run build
+
+5. Preview production build
+npm run preview
+
+🧾 Environment Notes
+
+All images are located under src/assets/.
+
+This project is frontend-only, with no backend or database.
+
+Fully optimized for performance and mobile viewing.
+
+✨ Future Improvements
+
+Add a working contact form (using EmailJS or API)
+
+Implement a dynamic blog system with real posts
+
+Add a dark/light mode toggle
+
+Improve accessibility (ARIA labels, focus states, etc.)
+
+👨‍💻 Author
+
+Orlando Ledón
+Front-End Developer (React / React Native)
+
+📧 [leso.orlando@gmail.com]
+💼 [LinkedIn ]
